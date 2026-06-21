@@ -19,18 +19,23 @@ abstract class Animal{
     String color = "black";
 
     Animal(){
+
         System.out.println("animal constructor called");
     }
 
     void eat(){
+
         System.out.println("animal eat");
     }
-    abstract void walk();
+    abstract void walk(
+
+    );
 
 
 }
 class Horse extends Animal{
     Horse(){
+
         System.out.println("Horse constructor called");
     }
     void changeColor() {
@@ -39,19 +44,23 @@ class Horse extends Animal{
 
     }
     void walk(){
+
         System.out.println("walk on 4 legs");
     }
 }
 class Mustang extends Horse {
     Mustang(){
+
         System.out.println("Mustang Constructor called");
     }
 }
 class Chicken extends Animal{
     void changeColor(){
+
         color = " yellow";
     }
     void walk(){
+
         System.out.println("walk on 2 legs");
     }
 }

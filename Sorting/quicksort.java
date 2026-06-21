@@ -46,18 +46,14 @@ public class quicksort{
 
         for(int j = si; j< ei; j++){
             if(arr[j]<piviot){
-
                 i++;
                 //swap
-
                 int temp = arr[j];
                 arr[j] = arr[i];
                 arr[i] = temp;
             }
         }
-
         //for putting the piviot in right place
-
         i++;
         int temp = piviot;
         arr[ei] = arr[i];

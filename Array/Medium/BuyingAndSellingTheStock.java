@@ -3,17 +3,17 @@ package Array.Medium;
 public class BuyingAndSellingTheStock {
 
     static void main(String[] args) {
-        int [] arr = {7, 1, 5, 3, 6, 4};
-        int mp = 0;
-        int bb = arr[0];
+        int [] prices = {7,6,4,3,1};
+        int minb = prices[0];
+        int maxp = 0;
 
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] > bb) {
-                mp = Math.max(mp, arr[i] - bb);
+        for(int i = 1; i < prices.length; i++) {
+            if(minb > prices[i]) {
+                minb = Math.min(minb,prices[i]);
+            } else {
+                maxp = Math.max(maxp, prices[i]-minb);
             }
-            bb = Math.min(bb, arr[i]);
         }
-
-        System.out.println(mp);
+        System.out.println(maxp);
     }
 }
