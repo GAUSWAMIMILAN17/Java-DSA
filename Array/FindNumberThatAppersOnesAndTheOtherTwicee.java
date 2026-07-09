@@ -2,7 +2,7 @@ package Array;
 
 public class  FindNumberThatAppersOnesAndTheOtherTwicee {
     static void main(String[] args) {
-        int []arr={1,1,2,2,3,3,4,4,5,5,7,6,6};
+        int []arr={2,2,1};
         System.out.println("Brut Force approach o(n^2) : "+brutForce(arr));
         System.out.println("Optimum Force approach o(n) : "+optimum(arr));
     }

@@ -1,7 +1,5 @@
 package LinkedList;
 
-
-
 public class implimentation {
     public static class Node{
         int data;
