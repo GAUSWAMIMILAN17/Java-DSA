@@ -8,13 +8,13 @@ public class mergesort {
         System.out.println();
     }
     public static void mergesort(int arr[], int si, int ei){
-    if (si>=ei){
-        return;
-    }
+        if (si>=ei){
+            return;
+        }
         int mid = si + (ei-si)/2;
-    mergesort(arr,si,mid);
-    mergesort(arr,mid+1, ei);
-    merge(arr, si, mid, ei);
+        mergesort(arr,si,mid);
+        mergesort(arr,mid+1, ei);
+        merge(arr, si, mid, ei);
     }
     public static void merge(int arr[], int si, int mid, int ei){
         int temp[] = new int[ei-si+1];
@@ -39,7 +39,7 @@ public class mergesort {
             temp[k++] = arr[j++];
         }
         for (k=0 , i=si; k < temp.length; k++,i++) {
-             arr[i] = temp[k];
+            arr[i] = temp[k];
         }
     }
     public static void main(String[] args) {

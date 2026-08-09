@@ -8,72 +8,61 @@ public class linklistImplementation {
 
         public Node(int val) {
             this.val = val;
+            this.next = null;
         }
     }
 
     public static class queueLL {
-        Node head =  null;
-        Node tail = null;
-        int size = 0;
+        static Node head =  null;
+        static Node tail = null;
+
+        public static boolean isEmpty() {
+            return head == null & tail == null;
+        }
 
         void add(int val) {
-            Node temp = new Node(val);
-            if(size == 0) {
-                head = tail = temp;
+            Node newNode = new Node(val);
+            if(head == null){
+                head = tail = newNode;
+                return;
             }
-            else {
-                tail.next = temp;
-                tail = temp;
-            }
-            size++;
+            tail.next = newNode;
+            tail = newNode;
         }
 
         int remove() {
-            if(size == 0) {
-                System.out.println("Queue is empty");
+            if (isEmpty()){
+                System.out.println("empty queue");
                 return -1;
             }
-            int x =  head.val;
-            head = head.next;
-            size--;
-            return x;
+            int front = head.val;
+            if(tail == head){
+                tail = head = null;
+            } else {
+                head = head.next;
+            }
+            return front;
         }
 
         int peek() {
-            if(size == 0) {
+            if(isEmpty()) {
                 System.out.println("Queue is empty");
                 return -1;
             }
             return head.val;
         }
 
-        void display() {
-            Node temp = head;
-            if(size == 0) {
-                System.out.println("Queue is empty");
-                return;
-            }
-            while(temp != null) {
-                for ( int i = 0; i < size; i++ ) {
-                    System.out.print(temp.val+" ");
-                    temp = temp.next;
-                }
-                System.out.println();
-            }
-        }
     }
 
     static void main() {
-        queueLL q1 = new queueLL();
-        q1.display();
-        q1.add(1);
-        q1.add(2);
-        q1.add(3);
-        q1.add(4);
-        q1.add(5);
-        q1.display();
-        q1.remove();
-        q1.display();
-        System.out.println(q1.peek());
+        queueLL q = new queueLL();
+        q.add(1);
+        q.add(2);
+        q.add(3);
+
+        while(!q.isEmpty()){
+            System.out.println(q.peek());
+            q.remove();
+        }
     }
 }
